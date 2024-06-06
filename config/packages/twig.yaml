@@ -1,6 +1,22 @@
 twig:
     file_name_pattern: '*.twig'
+    globals:
+        main_nav:
+
+            - label: home
+              route: /
+            - label: about
+              route: '#'
+            - label: actions
+              route: '#'
+            - label: writings
+              route: '#'
+            - label: Q & A
+              route: '#'
+            - label: join
+              route: '#'
 
 when@test:
     twig:
         strict_variables: true
+

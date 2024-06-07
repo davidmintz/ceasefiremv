@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}CeasefireMV{% endblock %}
+
+{% block body %}
+    <div class="d-flex justify-content-center border">
+        <div style="max-width: 600px;">
+            <p class="my-4">
+            route is {{ app.current_route }}<br>
+            $template route parameter is {{  app.current_route_parameters.template }}<br>
+            template exists? {{ answer }}<br>
+            </p>
+        </div>
+    </div>
+
+{%  endblock %}

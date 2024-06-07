@@ -2,21 +2,21 @@ twig:
     file_name_pattern: '*.twig'
     globals:
         main_nav:
-
             - label: home
               route: /
             - label: about
-              route: '#'
+              route: '/about'
             - label: actions
-              route: '#'
+              route: '/actions'
             - label: writings
-              route: '#'
+              route: '/writings'
             - label: Q & A
-              route: '#'
+              route: '/faq'
+              template: faq
             - label: join
-              route: '#'
+              route: '/join'
             - label: resources
-              route: '#'
+              route: '/resources'
 
 when@test:
     twig:

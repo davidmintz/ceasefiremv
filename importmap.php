@@ -26,7 +26,6 @@ return [
         'version' => '5.3.3',
         'type' => 'css',
     ],
-    /*
     '@hotwired/stimulus' => [
         'version' => '3.2.2',
     ],
@@ -36,5 +35,4 @@ return [
     '@hotwired/turbo' => [
         'version' => '7.3.0',
     ],
-    */
 ];

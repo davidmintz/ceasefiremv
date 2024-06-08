@@ -19,14 +19,15 @@ class IndexController extends AbstractController
     public function template(Environment $twig, string $template) : Response
     {
         $loader = $twig->getLoader();
-        if ($loader->exists("index/$template")) {
-            $answer = "template $template exists";
+        if ($loader->exists("index/$template.html.twig")) {
+            //$answer = "template $template exists";
+            return $this->render("index/$template.html.twig",['template' => $template]);
         } else {
             $answer = "no such template '$template' exists";
+            return $this->render('index/template.html.twig',[
+                'template' => $template, 'answer' => $answer
+            ]);
         }
-        return $this->render('index/template.html.twig',[
-            'template' => $template, 'answer' => $answer
-        ]);
     }
 
 }

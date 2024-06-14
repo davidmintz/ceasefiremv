@@ -11,8 +11,8 @@ twig:
             - label: writings
               route: '/writings'
             - label: Q & A
-              route: '/faq'
-              template: faq
+              route: '/questions'
+              template: questions
             - label: join
               route: '/join'
             - label: resources

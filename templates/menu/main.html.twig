@@ -2,22 +2,23 @@
 <nav class="navbar navbar-expand-lg bg-body-tertiary border border-success  rounded mt-0">
     <div class="container-fluid">
         <!--  <a class="navbar-brand" href="#">CeaseFireMV</a> -->
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="d-md-flex d-block flex-row mx-md-auto mx-0">
-            <div class="collapse navbar-collapse" id="navbarSupportedContent" id="navigation">
+         <div class="d-md-flex d-block flex-row mx-md-auto mx-0">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     {% for item in main_nav %}
                         <li class="nav-item">{#  should be possible to simplify this... #}
                             <a class="nav-link{%
                             if (app.current_route_parameters and app.current_route_parameters['template'] == item.label)
                             or  (app.current_route_parameters and item.template is defined and app.current_route_parameters['template'] == item.template)
-                            or app.current_route == item.label %} active" aria-current="page" {% endif %}" href="{{ item.route }}">{{ item.label }}</a>
+                                or app.current_route == item.label %} active" aria-current="page" {% endif %}" href="{{ item.route }}">{{ item.label }}</a>
                         </li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
     </div>
 </nav>

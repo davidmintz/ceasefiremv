@@ -35,7 +35,7 @@ class Standout
     }
 
     /**
-     * returns the next standout date
+     * returns the next standout date/time
      * @return String
      * @throws \Exception
      */
@@ -49,13 +49,16 @@ class Standout
             $date->setTime($hour,$minute);
             return $date->format('F j \a\t g:i a');
         }
-        // today is Sunday. is it over yet?
+        // else... today is Sunday. is it over yet?
         $now = new \DateTimeImmutable();
         $end = $now->add($this->getDuration());
-        if ($now < $end) {
-            $when = "today at ".$now->format('g:i a');
-        } else {
-            $when = $now->add(new \DateInterval('P7D'))->format('F j \a\t g:i a');
+        if ($now < $end) { // it ain't over
+            $standout = $now->setTime($hour,$minute);
+            $when = "today at ".$standout->format('g:i a');
+        } else { // it's over. next week...
+            $when = $now->add(new \DateInterval('P7D'))
+                ->setTime($hour,$minute)
+                ->format('F j \a\t g:i a');
         }
 
         return $when;

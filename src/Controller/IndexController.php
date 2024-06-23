@@ -19,12 +19,12 @@ class IndexController extends AbstractController
     #[Route('/actions', name: 'actions')]
     public function actions(): Response
     {
-        $start_time = $this->getParameter('app.standout_start_time');
-        $standout = new Standout($start_time);
+
+        $standout = new Standout($this->getParameter("app.standout"));
         return $this->render('index/actions.html.twig',[
 
             'template' => 'actions', // get rid of this
-            'start_time' => $start_time,
+            'start_time' => $this->getParameter("app.standout")['start_time'],
             'standout' => $standout
         ]);
     }

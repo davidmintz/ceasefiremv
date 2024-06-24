@@ -51,7 +51,7 @@ class Standout
         }
         // else... today is Sunday. is it over yet?
         $now = new \DateTimeImmutable();
-        $end = $now->add($this->getDuration());
+        $end = $now->add($this->getDuration())->setTime($hour,$minute)->add($this->getDuration());
         if ($now < $end) { // it ain't over
             $standout = $now->setTime($hour,$minute);
             $when = "today at ".$standout->format('g:i a');

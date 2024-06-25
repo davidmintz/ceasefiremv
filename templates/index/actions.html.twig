@@ -1,10 +1,81 @@
-{% extends 'wrapper.html.twig' %}
-{% block content %}
+{% extends 'base.html.twig' %}
+{% block body %}
+    <div class="d-flex justify-content-center border">
+        <div class="p-2" style="max-width: 700px;">
+
+
     <h2 class="text-center">actions and events</h2>
-    <h3 class="p-3 my-4 rounded-3 " style="font-size:larger; background-color: red;color:white;"><strong>Demand a ceasefire!
+
+    <h3 id="standout" class="p-3 my-4 rounded-3 " style="font-size:larger; background-color: red;color:white;"><strong>Demand a ceasefire!
             Stop the US-backed genocide in Gaza!</strong></h3>
     <p>CeasefireMV holds standouts at the Five Corners intersection in Vineyard Haven on Sunday afternoons at 4:00 pm, rain or shine. Come join us!
         Our next standout at Five Corners will be <strong>{{ standout.nextStandoutDate }}</strong>.</p>
-    <img src="{{ asset('images/17-dec.5-corners.jpg') }}" alt="CeasefireMV members standing on the sidewalk holding signs demanding a ceasefire" class="img-fluid">
+    <img src="{{ asset('images/17-dec.5-corners.jpg') }}" alt="CeasefireMV members standing on the sidewalk holding signs demanding a ceasefire" class="img-fluid mb-3">
+    <p>We've been out there every Sunday since November 19, 2023. Anyone who shares our goals -- stop the genocide in Gaza, fight the big lie that equates criticism of Zionism with antisemitism --
+    is welcome to join us in this weekly demonstration. We stay for two hours, but you can arrive late or leave early if need be. If you
+    don't bring a sign, you can borrow one from our supply. If you aren't comfortable standing, you can bring a chair or use one of ours.
+    </p>
+            <h4 id="1948q" class="mb-2 text-body-secondary" >Film screening</h4>
+            <h2 class="mt-0 text-center mb-3"><em>1948: Creation and Catastrophe</em></h2>
+        </div>
+    </div>
+    <div class="container-fluid  text-center pb-2">
+        <img src="{{  asset('/images/1948-slider-1-768x266.png') }}"  alt="A long line of Palestinian refugees traveling on foot, carrying their belongings, children in tow" class="img-fluid mb-2 rounded-3">
+    </div>
+    <div class="d-flex justify-content-center border">
+        <div class="p-2" style="max-width: 700px;">
+        <p>
+            CeasefireMV is pleased to present a screening of the documentary film
+            <em>1948: Creation and Catastrophe</em> on <strong>Thursday, July 11 at 5:30 pm</strong> at the Oaks Bluff Library.
+            Time will be allotted for discussion following the screening. This event is free and open to the public.
+        </p>
+        <p>From the documentary's website:</p>
 
+        <blockquote class="alert alert-secondary ms-3 border-info border-4 border-top-0 border-bottom-0 border-end-0 p-4">
+            <em>1948: Creation and Catastrophe</em> is the story of the establishment of Israel as seen through the eyes of the
+            people who lived it. Rather than being a history lesson, this documentary is
+            a primer for the present. It is simply not possible to make sense of what is
+            happening in the Israeli-Palestinian conflict today without an understanding of
+            1948.
+            <br><br>
+            Yet despite the critical importance of 1948, most of the people interviewed for
+            this documentary have never been able to tell their story in full until now. For
+            nearly seven decades, they have been living with the legacy of that fateful year.
+            Many of the veterans, refugees and witnesses we interviewed have already
+            passed away. This truly is the last chance to hear this story directly from those
+            who lived it.
+            <br><br>
+            The documentary promises to reveal this story—and more important—to
+            provide a way of understanding the underlying dynamics of the seemingly
+            incomprehensible conflict that continues to capture headlines to this day.
+            This film was the last chance for many of its Israeli and Palestinian characters
+            to narrate their first-hand accounts of the creation of a state and the expulsion
+            of a nation.
+            <br><br>
+            The hopes, fears and grievances that drove the war in 1948 are still central
+            to the conflict today. By dispelling the myths about 1948 and providing an
+            understanding of the events of this foundational moment, this documentary
+            will make it possible for Americans to make sense of present conflict in the
+            region. And once we understand the conflict, it becomes possible to search for
+            a solution.
+        </blockquote>
+
+        <p> The Oak Bluffs Public Library is at
+        <address class="ms-4">
+            56R School St<br>
+            Oak Bluffs, MA 02557
+        </address>
+
+        </p>
+        <p>
+            For further information about the film, please see <a target="_blank" href="https://1948movie.com">1948movie.com</a>.
+            CeasefireMV welcomes everyone to attend this event. Please feel free to share this page on your social media. You can
+            also <a href="/1948-screening.flyer.pdf">download the flyer</a>.
+        </p>
+        <div class="fb-share-button" data-href="https://ceasefiremv.org/1948" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fceasefiremv.org%2F1948&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+
+
+
+        </div>
+    </div>
 {% endblock %}

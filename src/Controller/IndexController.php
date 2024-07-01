@@ -25,6 +25,12 @@ class IndexController extends AbstractController
             'standout' => $standout
         ]);
     }
+
+    #[Route('/1948', name: '1948')]
+    public function screening_1948(): Response
+    {
+        return $this->redirect('/actions#1948');
+    }
 //use Symfony\Component\Templating\EngineInterface;
     #[Route('/{template}', name: 'template')]
     public function template(Environment $twig, string $template) : Response

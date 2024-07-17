@@ -9,3 +9,17 @@ main {
     /*max-width: 1000px;
     margin: auto;*/
 }
+#main-nav {
+    font-family: "Courier 10 Pitch, serif";
+    font-size: 1.2em;
+}
+
+
+@media (min-width: 1000px) { /* 768 */
+    /* CSS rules go here */
+    #main-nav {
+        background-color: #f0f0f5;
+        border: 1px solid green;
+        border-radius: 10px;
+    }
+}

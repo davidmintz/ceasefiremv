@@ -5,6 +5,7 @@ namespace App\Controller;
 use App\Service\Standout;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\Routing\Attribute\Route;
 use Twig\Environment;
 
@@ -14,6 +15,20 @@ class IndexController extends AbstractController
     public function index(): Response
     {
         return $this->render('index/index.html.twig',);
+    }
+    #[Route('/privacy-consent', name: 'privacy_consent')]
+    public function accept_privacy_policy(): Response
+    {
+        // experimental
+        //$request->cookies->set('PRIVACY_CONSENT',true);
+        $cookie = Cookie::create('PRIVACY_CONSENT')
+            ->withValue("1") // maybe make it the version number?
+            ->withExpires(strtotime('+2 year'));
+        $response = new Response();
+//        $response->headers->clearCookie('PRIVACY_CONSENT');
+        $response->headers->setCookie($cookie);//Cookie($cookie);
+        //$response->setContent($this->renderView('index/index.html.twig',['template' => 'index']));
+        return $response;
     }
 
     #[Route('/actions', name: 'actions')]

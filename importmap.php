@@ -19,6 +19,11 @@ return [
     'bootstrap' => [
         'version' => '5.3.3',
     ],
+    // see if this works?
+    'consent' => [
+        'path' => './assets/consent.js',
+        'entrypoint' => true,
+    ],
     '@popperjs/core' => [
         'version' => '2.11.8',
     ],
@@ -34,5 +39,8 @@ return [
     ],
     '@hotwired/turbo' => [
         'version' => '7.3.0',
+    ],
+    'axios' => [
+        'version' => '1.7.7',
     ],
 ];

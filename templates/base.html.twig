@@ -33,7 +33,7 @@
                  route is NOT privacy
                 {#  dump(app.request.attributes.get("template")) #}
             <div class="container">
-                <p> {% not app.request.cookies.get("PRIVACY_CONSENT") %} no consent cookie or not true
+                <p> {% if not app.request.cookies.get("PRIVACY_CONSENT") %} no consent cookie or not true
                 <p class="text-body-secondary">You can read our privacy/cookie policy, or accept it without reading.</p>
                 <a href="/privacy"  title="go to privacy/cookie policy" id="show-policy" class="btn btn-outline-primary">Show me</a>
                 <button title="accept privacy/cookie policy" id="consent-button" class="btn btn-success">I accept</button>
@@ -47,7 +47,7 @@
 
                 {% else %}yes, privacy consent cookie detected{% endif %}
 
-                <p>{{ dump(app.request.cookies) }}</p>
+                <p>{# dump(app.request.cookies) #}</p>
                             </div>
             {%  else %}WTF? route is privacy
             {% endif %}

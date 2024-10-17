@@ -52,7 +52,7 @@ class IndexController extends AbstractController
     {
         $loader = $twig->getLoader();
         if ($loader->exists("index/$template.html.twig")) {
-            //$answer = "template $template exists";
+
             return $this->render("index/$template.html.twig",['template' => $template]);
         } else {
             $answer = "no such template '$template' exists";

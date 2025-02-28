@@ -6,8 +6,8 @@ twig:
               route: /
             - label: about
               route: '/about'
-            - label: actions
-              route: '/actions'
+            - label: events
+              route: '/events'
             - label: writings
               route: '/writings'
             - label: Q & A

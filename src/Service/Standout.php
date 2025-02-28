@@ -4,14 +4,24 @@ namespace App\Service;
 
 class Standout
 {
-    public function __construct(private readonly Array $config)
-    {}
+    public function __construct(readonly Array $config)
+    {
+
+    }
 
 //    public function getStartTime(): string
 //    {
 //        return $this->config['start_time'];
 //    }
+    public function duration_informal() : String
+    {
+        return $this->config['duration_informal'];
+    }
 
+//    public function __get(string $name) :?String
+//    {
+//       return $this->config[$name];
+//    }
     public function getDayOfWeek(): string
     {
         return $this->config['day_of_week'];

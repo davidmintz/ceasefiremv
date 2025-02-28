@@ -28,17 +28,16 @@
     <div class="container" style="max-width: 1200px" ><!-- hidden -->
         <!-- see if consent cookie is set; if not, display -->
         <!-- event handler on button click: hide button, show acknowledgment -->
-        <footer id="footer" style="max-width:1200px; position:sticky; left:0; bottom: 0;"
-                class="w-100 bg-body-tertiary text-center footer mt-auto py-1">
-            <h2>debug</h2>
+        <footer id="footer" style="max-width:1200px;"
+                class="w-100 bg-body-tertiary text-center footer py-1 mb-1">
 
-            {% set current_template =   app.current_route_parameters.template ?? null %}
-            privacy consent cookie detected: {% if app.request.cookies.get("PRIVACY_CONSENT") %}yes{% else %}no{% endif %}<br>
-            current route: {{ app.request.attributes.get('_route') }}<br>
-            <div class="container">
-
-                <p> {% if not app.request.cookies.get("PRIVACY_CONSENT") %} {# no consent cookie exists, or is not truthy #}
-                    {% if current_template != 'privacy' %}
+            {#  could be refactored but this is easier to read and understand  #}
+            {% set current_template_param = app.current_route_parameters.template ?? null %}
+            {% set privacy_cookie_detected = app.request.cookies.get("PRIVACY_CONSENT") ? true : false %}
+            {% set is_privacy_page = current_template_param == 'privacy' %}
+            <div class="container mb-0">
+                <p> {% if not privacy_cookie_detected %} {# no consent cookie exists, or is not truthy #}
+                    {% if current_template_param != 'privacy' %}
                 <p class="text-body-secondary">You can read our privacy/cookie policy, or accept it without reading.</p>
                     <a href="/privacy"  title="go to privacy/cookie policy" id="show-policy" class="btn btn-outline-primary">Show me</a>
                 {% endif %}
@@ -50,11 +49,10 @@
                 </span>
                 <script type="module" src="{{ asset('consent.js') }}"></script>
                 {% endif %}
-
-
             </div>
-
-                {# endif #}
+            <!-- footer stuff -->
+            {% if  current_template_param != 'privacy'%} <a href="/privacy">privacy policy</a> |{%endif%} <a href="mailto:info@ceasefiremv.org">info@ceasefiremv.org</a>
+                | Martha's Vineyard, Massachusetts, USA
 
         </footer>
     </div>

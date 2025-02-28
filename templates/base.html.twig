@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
         <title>{% block title %}CeasefireMV{% endblock %}</title>
         {% block stylesheets %}
         {% endblock %}
@@ -29,27 +30,31 @@
         <!-- event handler on button click: hide button, show acknowledgment -->
         <footer id="footer" style="max-width:1200px; position:sticky; left:0; bottom: 0;"
                 class="w-100 bg-body-tertiary text-center footer mt-auto py-1">
-            {% if app.request.attributes.get("template") != "privacy" %}
-                {#  dump(app.request.attributes.get("template")) #}
+            <h2>debug</h2>
+
+            {% set current_template =   app.current_route_parameters.template ?? null %}
+            privacy consent cookie detected: {% if app.request.cookies.get("PRIVACY_CONSENT") %}yes{% else %}no{% endif %}<br>
+            current route: {{ app.request.attributes.get('_route') }}<br>
             <div class="container">
+
                 <p> {% if not app.request.cookies.get("PRIVACY_CONSENT") %} {# no consent cookie exists, or is not truthy #}
+                    {% if current_template != 'privacy' %}
                 <p class="text-body-secondary">You can read our privacy/cookie policy, or accept it without reading.</p>
-                <a href="/privacy"  title="go to privacy/cookie policy" id="show-policy" class="btn btn-outline-primary">Show me</a>
-                <button title="accept privacy/cookie policy" id="consent-button" class="btn btn-success">I accept</button>
+                    <a href="/privacy"  title="go to privacy/cookie policy" id="show-policy" class="btn btn-outline-primary">Show me</a>
+                {% endif %}
+                <button title="accept privacy/cookie policy" id="consent-button" class="btn btn-success">I accept the privacy policy</button>
                 <span hidden id="consent-thank-you">
                     <svg id="check-icon" class="text-success" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16">
                     <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
                 </svg> Thank you.
                 </span>
-
                 <script type="module" src="{{ asset('consent.js') }}"></script>
+                {% endif %}
 
-                {% else %}yes, privacy consent cookie detected{% endif %}
 
-                <p>{# dump(app.request.cookies) #}</p>
-                            </div>
-            {%  else %}{# route is privacy #}
-            {% endif %}
+            </div>
+
+                {# endif #}
 
         </footer>
     </div>

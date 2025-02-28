@@ -6,14 +6,15 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     {% for item in main_nav %}
-                        <li class="nav-item">{#  should be possible to simplify this... #}
+                        <li class="nav-item">{#  should be possible to simplify this, but... #}
                             <a class="nav-link{%
                             if (app.current_route_parameters and app.current_route_parameters['template'] == item.label)
                             or  (app.current_route_parameters and item.template is defined and app.current_route_parameters['template'] == item.template)
-                                or app.current_route == item.label %} active" aria-current="page" {% endif %}" href="{{ item.route }}">{{ item.label }}</a>
+                                or app.current_route == item.label %} active text-decoration-underline" aria-current="page" {% endif %}" href="{{ item.route }}">{{ item.label }}</a>
                         </li>
                     {% endfor %}
                 </ul>
+               {# current route is {{ app.request.attributes.get('_route') }} #}
             </div>
         </div>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

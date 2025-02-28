@@ -34,7 +34,6 @@ class IndexController extends AbstractController
     #[Route('/actions', name: 'actions')]
     public function actions(): Response
     {
-
         $standout = new Standout($this->getParameter("app.standout"));
         return $this->render('index/actions.html.twig',[
             'standout' => $standout
@@ -52,12 +51,11 @@ class IndexController extends AbstractController
     {
         $loader = $twig->getLoader();
         if ($loader->exists("index/$template.html.twig")) {
-
-            return $this->render("index/$template.html.twig",['template' => $template]);
+            return $this->render("index/$template.html.twig",['template' => $template, 'status' => "OK"]);
         } else {
-            $answer = "no such template '$template' exists";
+            $status = "no such resource '$template' exists";
             return $this->render('index/template.html.twig',[
-                'template' => $template, 'answer' => $answer
+                'template' => $template, $status => $status
             ]);
         }
     }

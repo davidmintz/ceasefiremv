@@ -22,7 +22,7 @@ class IndexController extends AbstractController
         // experimental
         //$request->cookies->set('PRIVACY_CONSENT',true);
         $cookie = Cookie::create('PRIVACY_CONSENT')
-            ->withValue("1") // maybe make it the version number?
+            ->withValue("1.0") // the version number?
             ->withExpires(strtotime('+2 year'));
         $response = new Response();
 //        $response->headers->clearCookie('PRIVACY_CONSENT');
@@ -31,11 +31,20 @@ class IndexController extends AbstractController
         return $response;
     }
 
-    #[Route('/actions', name: 'actions')]
-    public function actions(): Response
+    #[Route('/withdraw-privacy-consent', name: 'withdraw_privacy_consent')]
+    public function withdraw_consent()
+    {
+        $response = new Response();
+        $response->headers->clearCookie('PRIVACY_CONSENT');
+        return $response;
+
+    }
+
+    #[Route('/events', name: 'events')]
+    public function events(): Response
     {
         $standout = new Standout($this->getParameter("app.standout"));
-        return $this->render('index/actions.html.twig',[
+        return $this->render('index/events.html.twig',[
             'standout' => $standout
         ]);
     }
@@ -43,7 +52,7 @@ class IndexController extends AbstractController
     #[Route('/1948', name: '1948')]
     public function screening_1948(): Response
     {
-        return $this->redirect('/actions#1948');
+        return $this->redirect('/events#1948');
     }
 //use Symfony\Component\Templating\EngineInterface;
     #[Route('/{template}', name: 'template')]

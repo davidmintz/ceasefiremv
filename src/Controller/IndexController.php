@@ -59,14 +59,16 @@ class IndexController extends AbstractController
     public function template(Environment $twig, string $template) : Response
     {
         $loader = $twig->getLoader();
-        if ($loader->exists("index/$template.html.twig")) {
-            return $this->render("index/$template.html.twig",['template' => $template, 'status' => "OK"]);
+        if ('template' == $template) { // playing games? redirect
+            return $this->redirectToRoute('home');
+        } else if ($loader->exists("index/$template.html.twig")) {
+            return $this->render("index/$template.html.twig", ['template' => $template, 'status' => "OK"]);
         } else {
-            $status = "no such resource '$template' exists";
-            return $this->render('index/template.html.twig',[
-                'template' => $template, $status => $status
+            $status = "No such resource '$template' was found. Please check your spelling, or try one of the 
+            navigation links in the menu above.";
+            return $this->render('index/template.html.twig', [
+                'template' => $template, 'status' => $status
             ]);
         }
     }
-
 }

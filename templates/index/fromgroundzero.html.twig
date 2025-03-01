@@ -1,0 +1,52 @@
+{% extends 'wrapper.html.twig' %}
+{% block title %} CeasefireMV Writes | {{ parent() }}{% endblock %}
+{% block content %}
+<!-- FB sharer etc -->
+<script>
+    window.fbAsyncInit = function() {
+        FB.init({
+            appId            : '968207304783213',
+            xfbml            : true,
+            version          : 'v20.0'
+        });
+    };
+</script>
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js"></script>
+    <h1 class="text-center text-success"><em>From Ground Zero</em></h1>
+<div class="container-fluid  text-center pb-2">
+    <img src="/images/soft-skin.from-ground-zero.jpg"  alt="image from an animation, created by Palestinian children, depicting life in a tent encampment during Israel's war of annihilation against Gaza" class="img-fluid mb-2 rounded-3">
+</div>
+
+<p  style="font-size: 1.2em">
+    <a href="/">CeasefireMV</a>, in collaboration with Expanding The Conversation and <a href="https://www.olivebranchfairtrade.org/" target="_blank">Olive Branch Fair Trade</a>,
+    will present a screening of the extraordinarily powerful documentary film
+    <em>From Ground Zero</em> on <strong>Sunday, March 2, 2025, at 4:00 pm</strong> at the Strand Theater in Oak Bluffs.
+</p>
+<p>From the documentary's website:</p>
+
+<blockquote class="alert alert-secondary ms-3 border-info border-4 border-top-0 border-bottom-0 border-end-0 p-4">
+    Palestine's Official Submission for the 2025 Academy Awards,
+    <em>From Ground Zero</em> is a powerful collection of short films by 22 Palestinian filmmakers
+    living through war in Gaza. Through a unique blend of animation, documentary, and fiction,
+    these stories capture the unyielding steadfastness of the human spirit and
+    enduring creativity that thrives even in the face of relentless devastation.
+</blockquote>
+
+<p> The Strand Theater is at
+<address class="ms-4">
+    11 Oak Bluffs Ave<br>
+    Oak Bluffs, Massachusetts, 02557
+</address>
+
+</p>
+<p><strong>Tickets are $20 each </strong> or pay what you can. Please purchase in advance via venmo: <a href="https://venmo.com/ceasefiremv">https://venmo.com/ceasefiremv</a>.
+    Additional donations are gratefully accepted. CeasefireMV members have used their own the money to cover all
+    expenses, including screening and theater rental fees.
+</p>
+<p>
+    For further information about <em>From Ground Zero</em>, please see <a target="_blank" href="https://www.watermelonpictures.com/films/from-ground-zero">the film's website</a>.
+    CeasefireMV welcomes everyone to attend this event. Please feel free to share this page on your social media.
+    <!-- You can also <a href="/1948-screening.flyer.pdf">download the flyer</a>. -->
+</p>
+<div class="fb-share-button" data-href="https://ceasefiremv.org/fromgroundzero" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fceasefiremv.org%2F1948&amp;src=sdkpreparse" class="fb-xfbml-parse-ignore">Share</a></div>
+{% endblock %}

@@ -6,10 +6,17 @@
 
 
     <h2 class="text-center">actions and events</h2>
-    <p>Protest alone is not sufficient, but it is necessary in order to promote public awareness and support
+            {% if  "now"|date("Y-m-d.H:i") < "2025-03-02.14:00" %}
+            <div  class="border border-success alert shadow my-3">
+            <h1 class="text-success text-center"><em>From Ground Zero</em></h1>
+            <p>We are immensely pleased and excited to present a screening of the film <em>From Ground Zero</em> on
+            Sunday, March 2, at 4:00 pm at the Strand Theater in Oak Bluffs. Please see <a href="/fromgroundzero">this announcement!</a></p>
+            </div>
+            {%  endif %}
+    <p><em>Protest alone is not sufficient, but it is necessary in order to promote public awareness and support
     for a permanent ceasefire, an end to US military aid to Israel, and to challenge the climate of neo-McCarthyist
         repression that falsely equates opposition to Israel's
-        genocidal war on Gaza with antisemitism.</p>
+        genocidal war on Gaza with antisemitism.</em></p>
     <h3 id="standout" class="p-3 my-4 rounded-3 text-center border border-success border-4" style="font-size:larger; background-color: red;color:white;"><strong>Permanent ceasefire!
             End the occupation!</strong></h3>
     <p>CeasefireMV holds standouts in solidarity with the Palestinian cause at the Five Corners intersection in Vineyard Haven every Sunday, rain or shine. Come join us!

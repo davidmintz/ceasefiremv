@@ -1,3 +1,7 @@
 framework:
-    mailer:
-        dsn: '%env(MAILER_DSN)%'
+    mailer: # MAILER_PASSWORD is kept in the vault
+        dsn: "smtp://mintz@vernontbludgeon.com:%env(MAILER_PASSWORD)%@smtp.fastmail.com:587"
+
+    messenger:
+        transports:
+            mailer: 'sync://'

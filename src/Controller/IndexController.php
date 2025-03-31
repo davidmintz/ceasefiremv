@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Service\Standout;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Cookie;
 use Symfony\Component\Routing\Attribute\Route;
@@ -32,7 +33,7 @@ class IndexController extends AbstractController
     }
 
     #[Route('/withdraw-privacy-consent', name: 'withdraw_privacy_consent')]
-    public function withdraw_consent()
+    public function withdraw_consent() : Response
     {
         $response = new Response();
         $response->headers->clearCookie('PRIVACY_CONSENT');
@@ -48,7 +49,28 @@ class IndexController extends AbstractController
             'standout' => $standout
         ]);
     }
+/* // to be continued
+    #[Route('/join',name:'join')]
+    public function join(Request $request) : Response
+    {
+        {
+            $form = $this->createForm(SignupFormType::class);
 
+            $form->handleRequest($request);
+
+            if ($form->isSubmitted() && $form->isValid()) {
+                $data = $form->getData();
+                // Process the form data (e.g., save to database, send an email, etc.)
+
+                return $this->redirectToRoute('app_home');
+            }
+
+            return $this->render('index/join.html.twig', [
+                'form' => $form->createView(),
+            ]);
+        }
+    }
+*/
     #[Route('/1948', name: '1948')]
     public function screening_1948(): Response
     {

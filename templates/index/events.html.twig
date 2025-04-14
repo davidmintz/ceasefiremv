@@ -6,14 +6,20 @@
 
 
     <h2 class="text-center">actions and events</h2>
-            {% if  "now"|date("Y-m-d.H:i") < "2025-03-02.14:00" %}
-            <div  class="border border-success alert shadow my-3">
-            <h1 class="text-success text-center"><em>From Ground Zero</em></h1>
-            <p>We are immensely pleased and excited to present a screening of the film <em>From Ground Zero</em> on
-            Sunday, March 2, at 4:00 pm at the Strand Theater in Oak Bluffs. Please see <a href="/fromgroundzero">this announcement!</a></p>
-            </div>
+            {% if  "now"|date("Y-m-d.H:i") < "2025-04-27.17:00" %}
+
+                <div class="border border-success border-4 alert shadow my-3">
+                    <span>film screening:</span>
+                    <h1 style="color: red" class="text-center"><em>The Encampments</em></h1>
+                    <h2>Sunday April 27 2:00pm<br>Strand Theater, Oak Bluffs</h2>
+                    <p style="font-size: 1.2em">
+                        We are pleased to present a screening of <em>The Encampments</em>, which chronicles
+                        the 2024 student protest movement against the Israeli war of extermination against Gaza.
+                        For complete information please see <a href="/encampments">this announcement</a>.
+                    </p>
+                </div>
             {%  endif %}
-    <p><em>Protest alone is not sufficient, but it is necessary in order to promote public awareness and support
+    <p id="standout"><em>Protest alone is not sufficient, but it is necessary in order to promote public awareness and support
     for a permanent ceasefire, an end to US military aid to Israel, and to challenge the climate of neo-McCarthyist
         repression that falsely equates opposition to Israel's
         genocidal war on Gaza with antisemitism.</em></p>

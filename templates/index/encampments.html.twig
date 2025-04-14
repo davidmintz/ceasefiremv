@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}film screening: The Encampments | {{ parent() }}{% endblock %}
+{%  block body %}
+<div class="p-2 mx-auto" style="max-width: 700px;">
+    <span>film screening:</span>
+    <h1 class="text-center"><em>The Encampments</em></h1>
+    <h3>April 27 at 2:00 p.m.<br>Strand Theater, Oak Bluffs</h3>
+    <div style="font-size: 1.2em;">
+    <p>CeasefireMV, in collaboration with <a href="https://www.olivebranchfairtrade.org/" target="_blank">Olive Branch Fair Trade</a>
+    and Expanding The Conversation, is pleased to present a screening of the film <em>The Encampments,</em> which
+        documents the 2024 student protests against Israel's genocidal war on Gaza and the complicity of universities.</p>
+    <p>Tickets are $20, or pay what you can. Advance purchases through Venmo are encouraged; additional donations
+    are gratefully accepted.</p>
+    </div>
+</div>{# end skinny  #}
+<img src="{{ asset('/images/First-Arrests-04-p-1600.jpg') }}" alt="" class="img-fluid mb-3">
+    {# resume skinny  #}
+<div class="p-2 mx-auto " style="max-width: 700px;">
+    <p>
+    <em>The Encampments</em> chronicles the Columbia University Gaza
+    Solidarity Encampment and the international wave of student activism it ignited. Executive Produced by
+    Grammy Award-winning artist Macklemore, the film is directed by Kei Pritsker, a journalist and producer at
+    <em>BreakThrough News</em>, and award-winning filmmaker Michael T. Workman (Meantime).
+    </p>
+    <p>
+    Through exclusive footage and intimate interviews, <em>The Encampments</em> provides an unprecedented look at
+    one of the most significant student movements in modern history. The film captures the passion, resilience,
+    and challenges faced by students who risked everything to demand justice. <em>The Encampments</em> examines why
+    universities responded with mass arrests and force rather than engagement and dialogue, and sheds light on
+    the institutions’ efforts to suppress student activism.
+    </p>
+    <p>
+    The Columbia encampment began in April 2024 when nearly 50 students pitched tents on university grounds,
+    beginning an occupation that would grow into a nationwide protest movement. The documentary follows the
+    dramatic escalation, from Columbia’s administration banning student organizations for Palestine to the mass
+    arrests that broke a 50-year police ban on campus. As students faced police raids, media attacks, and
+    institutional repression, their movement spread to universities across the country and beyond, making history
+    in real time. The documentary includes access to the student organizers at several encampments, and also a
+    whistleblower from high-up in the administration of an Ivy League university who shares exclusive insights into
+    what was taking place within the halls of the ivory tower as students protested down below.
+    </p>
+    <p><em>-- adapted from the Watermelon Pictures press kit. For more, please see
+            <a href="https://www.watermelonpictures.com/films/the-encampments" target="_blank">the film's website.</a></em></p>
+    </div>
+{% endblock %}

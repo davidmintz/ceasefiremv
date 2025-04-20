@@ -1,5 +1,10 @@
 {% extends 'base.html.twig' %}
-
+        {% block og_meta %}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="The Encampments - presented by CeasefireMV" />
+            <meta property="og:image" content="https://ceasefiremv.org/images/encampments.og_image.png" />
+            <meta property="og:description" content="CeasefireMV presents the acclaimed documentary The Encampments - April 27 2:00p at the Strand Theater, Oak Bluffs MA">
+        {%  endblock %}
 {% block title %}film screening: The Encampments | {{ parent() }}{% endblock %}
 {%  block body %}
 <div class="p-2 mx-auto" style="max-width: 700px;">

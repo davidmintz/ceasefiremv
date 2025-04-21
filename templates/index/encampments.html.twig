@@ -57,12 +57,31 @@
     </p>
     <p><em>-- adapted from the Watermelon Pictures press kit. For more, please see
             <a href="https://www.watermelonpictures.com/films/the-encampments" target="_blank">the film's website.</a></em></p>
-    <hr>
-    <p style="font-size: larger">Help us pack the house! Please share this page on your socials, etc. You
-    can also <a href="/files/flyer.encampments.pdf">download our print-friendly flyer.</a></p>
-    <div class="share-link">
-        <button class="rounded p-2" onclick="copyLink()">📎 Copy this URL</button>
-        <span id="copy-confirm" style="display: none;">Link copied!</span>
+    <hr class="my-4" />
+
+    <div class="row align-items-start">
+        <!-- Left: Text + Button -->
+        <div class="col-md-8 mb-4 mb-md-0" style="font-size: larger">
+
+                Help us pack the house! Please share this page on your socials, etc.
+                You can also <a href="/files/flyer.encampments.pdf">download our print-friendly flyer.</a>
+
+            <div class="share-link mt-3">
+                <button class="rounded p-2" onclick="copyLink()">📎 Copy this URL</button>
+                <span id="copy-confirm" style="display: none;">Link copied!</span>
+            </div>
+        </div>
+
+        <!-- Right: QR Code -->
+        <div class="col-md-4 text-md-end text-center">
+            <a href="https://venmo.com/u/ceasefiremv" target="_blank" class="text-decoration-none d-block">
+                <img src="{{ asset('/images/small.ceasefiremv-qr.png')}}"
+                     alt="Venmo QR code"
+                     class="img-fluid"
+                     style="max-width: 160px;" />
+                <p class="mt-2 mb-0 fw-bold text-muted small">Tap or scan to donate/buy tickets</p>
+            </a>
+        </div>
     </div>
 
     <script>

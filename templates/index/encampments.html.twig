@@ -7,10 +7,20 @@
         {%  endblock %}
 {% block title %}film screening: The Encampments | {{ parent() }}{% endblock %}
 {%  block body %}
-<div class="p-2 mx-auto" style="max-width: 700px;">
+<div class="p-2 mx-auto" style="max-width: 850px;">
+
     <span>film screening:</span>
-    <h1 class="text-center" style="color:red"><em>The Encampments</em></h1>
-    <h3 class="mb-3 text-center">April 27 at 2:00 p.m.<br>Strand Theater, Oak Bluffs</h3>
+    <div class="row align-items-center my-3">
+        <div class="col-md-5 mb-4 mb-md-0">
+            <img src="{{  asset('/images/cropped.encampments.png') }}" alt="The Encampments film poster"
+                 class="img-fluid rounded" />
+        </div>
+        <div class="col-md-7 text-center">
+            <h1 style="color:red"><em>The Encampments</em></h1>
+            <h3>Sunday, April 27 2:00 p.m.<br>Strand Theatre, Oak Bluffs</h3>
+            <h4 class="mb-3">11 Oak Bluffs Ave 02557</h4>
+        </div>
+    </div>
     <div style="font-size: 1.2em;">
     <p>CeasefireMV, in collaboration with <a href="https://www.olivebranchfairtrade.org/" target="_blank">Olive Branch Fair Trade</a>
     and Expanding The Conversation, is pleased to present a screening of the film <em>The Encampments,</em> which

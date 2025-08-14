@@ -6,13 +6,11 @@
             <div class="collapse navbar-collapse " id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0 py-0">
                     {% for item in main_nav %}
-                        <li class="nav-item">{#  should be possible to simplify this, but... #}
-                            <a class="nav-link{%
-                            if (app.current_route_parameters and app.current_route_parameters['template'] == item.label)
-                            or  (app.current_route_parameters and item.template is defined and app.current_route_parameters['template'] == item.template)
-                                or app.current_route == item.label %} active text-decoration-underline" aria-current="page" {% endif %} href="{{ item.route }}">{{ item.label }}</a>
-                        </li>
-                    {% endfor %}
+                    <li class="nav-item">{#  should be possible to simplify this, but... #}<a class="nav-link{%
+                        if (app.current_route_parameters and app.current_route_parameters['template'] == item.label)
+                        or  (app.current_route_parameters and item.template is defined and app.current_route_parameters['template'] == item.template)
+                            or app.current_route == item.label %} active text-decoration-underline" aria-current="page" {% else %}"{% endif %} href="{{ item.route }}">{{ item.label }}</a></li>
+                {% endfor %}
                 </ul>
                {# current route is {{ app.request.attributes.get('_route') }} #}
             </div>

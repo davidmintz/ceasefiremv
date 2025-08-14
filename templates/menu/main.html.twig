@@ -10,7 +10,7 @@
                             <a class="nav-link{%
                             if (app.current_route_parameters and app.current_route_parameters['template'] == item.label)
                             or  (app.current_route_parameters and item.template is defined and app.current_route_parameters['template'] == item.template)
-                                or app.current_route == item.label %} active text-decoration-underline" aria-current="page" {% endif %}" href="{{ item.route }}">{{ item.label }}</a>
+                                or app.current_route == item.label %} active text-decoration-underline" aria-current="page" {% endif %} href="{{ item.route }}">{{ item.label }}</a>
                         </li>
                     {% endfor %}
                 </ul>

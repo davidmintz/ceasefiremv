@@ -8,12 +8,12 @@
         <meta name="description" content="residents of Martha's Vineyard, Massachussets, USA, who demand a permanent ceasefire; cessation of US military aid to Israel; an end to the Israeli state's genocidal war on the Palestinian people; liberation, peace and justice for Palestine.">
         {% block og_meta %}
         <meta property="og:type" content="website" />
-        <meta property="og:title" content="CeasefireMV" />
-        <meta property="og:image" content="https://ceasefiremv.org/images/og_image.png" />
-        <meta property="og:description" content="Ceasefire MV, also know as MV For Palestine, is a group of people residing on Martha's Vineyard, Massachussets, USA, who demand an immediate and permanent ceasefire and a halt to the Israeli military assault on Gaza.">
+        <meta property="og:title" content="MV For Palestine" />
+        <meta property="og:image" content="https://mvforpalestine.org/images/og_image.png" />
+        <meta property="og:description" content="MV For Palestine, also know as Ceasefire MV, is a group of people residing on Martha's Vineyard, Massachussets, USA, who demand an immediate and permanent ceasefire and a halt to the Israeli military assault on Gaza.">
         {%  endblock %}
         <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-        <title>{% block title %}CeasefireMV{% endblock %}</title>
+        <title>{% block title %}MV For Palestine{% endblock %}</title>
         {% block stylesheets %}
         {% endblock %}
         {% block javascripts %}
@@ -26,8 +26,8 @@
         <div class="d-flex text-center">
             <div><a href="/"><img id="logo"  class="img-fluid mx-0" style="max-height:220px" src="{{ asset('images/logo.png') }}"></a></div>
             <div class="p-2 flex-grow-1 align-self-end">
-                <h3 class="mt-0 py-1" style="background-color: red; color:white">Stop the genocide! Let Gaza live!</h3>
-                <h1>CeasefireMV</h1>
+                <h4 class="mt-0 py-1 rounded" style="background-color: red; color:white">Stop the genocide! Let Gaza live!</h4>
+                <h1 class="py-2" style="font-family: 'Courier 10 Pitch',serif">MV For Palestine</h1>
                 <!-- nav -->
                 {%  include 'menu/main.html.twig' %}
             </div>
@@ -61,7 +61,7 @@
             </div>
             <div class="mt-2">
             <!-- footer stuff -->
-            {% if  current_template_param != 'privacy'%} <a href="/privacy">privacy policy</a> |{%endif%} <a href="mailto:info@ceasefiremv.org">info@ceasefiremv.org</a>
+            {% if  current_template_param != 'privacy'%} <a href="/privacy">privacy policy</a> |{%endif%} <a href="mailto:info@mvforpalestine.org">info@mvforpalestine.org</a>
                 | Martha's Vineyard, Massachusetts, USA
             </div>
         </footer>

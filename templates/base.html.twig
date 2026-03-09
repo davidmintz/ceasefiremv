@@ -45,7 +45,7 @@
             {% set privacy_cookie_detected = app.request.cookies.get("PRIVACY_CONSENT") ? true : false %}
             {% set is_privacy_page = current_template_param == 'privacy' %}
             <div class="container mb-0">
-                <p> {% if not privacy_cookie_detected %} {# no consent cookie exists, or is not truthy #}
+                {% if not privacy_cookie_detected %} {# no consent cookie exists, or is not truthy #}
                     {% if current_template_param != 'privacy' %}
                 <p class="text-body-secondary">You can read our privacy/cookie policy, or accept it without reading.</p>
                     <a href="/privacy"  title="go to privacy/cookie policy" id="show-policy" class="btn btn-outline-primary">Show me</a>
@@ -62,6 +62,14 @@
             <div class="mt-2">
             <!-- footer stuff -->
             {% if  current_template_param != 'privacy'%} <a href="/privacy">privacy policy</a> |{%endif%} <a href="mailto:info@mvforpalestine.org">info@mvforpalestine.org</a>
+               |
+                <a href="https://instagram.com/mv4palestine" class=""
+                   target="_blank" rel="noopener noreferrer" aria-label="MV4Palestine on Instagram" title="follow us on Instagram">
+                    <svg class="insta-icon" viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+                        <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5a5.5 5.5 0 1 1 0 11 5.5 5.5 0 0 1 0-11zm0 2a3.5 3.5 0 1 0 0 7 3.5 3.5 0 0 0 0-7zm5.75-2.25a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5z"/>
+                    </svg>
+                    <span class="sr-only">Instagram</span>
+                </a>
                 | Martha's Vineyard, Massachusetts, USA
             </div>
         </footer>

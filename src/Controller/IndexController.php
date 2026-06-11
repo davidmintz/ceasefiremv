@@ -76,6 +76,13 @@ class IndexController extends AbstractController
     {
         return $this->redirect('/events#1948');
     }
+
+    /** for All That's Left of You -- ATLOY -- in lowercase */
+    #[Route('/atloy', name: 'atloy_lowercase')]
+    public function atloy() : Response
+    {
+        return $this->redirectToRoute('template', ['template' => 'ATLOY'], 301);
+    }
 //use Symfony\Component\Templating\EngineInterface;
     #[Route('/{template}', name: 'template')]
     public function template(Environment $twig, string $template) : Response
@@ -92,11 +99,5 @@ class IndexController extends AbstractController
                 'template' => $template, 'status' => $status
             ]);
         }
-    }
-    /** for All That's Left of You -- ATLOY -- in lowercase */
-    #[Route('/atloy', name: 'atloy_lowercase')]
-    public function atloy() : Response
-    {
-        return $this->redirectToRoute('template', ['template' => 'ATLOY'], 301);
     }
 }

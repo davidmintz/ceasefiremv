@@ -1,0 +1,36 @@
+{% extends 'wrapper.html.twig' %}
+        {% block og_meta %}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="All That's Left Of You - presented MV for Palestine/Expanding The Conversation" />
+            <meta property="og:image" content="https://mvforpalestine.org/images/atloy.family.og-image.1200x530.png" />
+            <meta property="og:description" content="MV for Palestine presents the highly acclaimed film All That's Left of You - June 28 6:00p at the Strand Theater, Oak Bluffs MA">
+            <meta property="og:url" content="https://mvforpalestine.org/ATLOY"/>
+        {%  endblock %}
+{% block title %}film screening: All That's Left of You | {{ parent() }}{% endblock %}
+{% block body %}
+    <div style="max-width: 800px; margin:auto; font-size:1.1em">
+    <span style="text-decoration: underline">film screening</span>
+        <h2 class="text-center">All That's Left of You</h2>
+        <h3 class="text-center">Sunday June 28 6:00pm<br>
+        Strand Theater - Oak Bluffs</h3>
+        <img class="img-fluid mb-3"  src="/images/AllThatsLeftOfYou_Alpine_1920x1080.jpg" alt="a Palestinian family poses for a formal wedding photo">
+        <div class="mb-3">
+            <div class="float-end ms-3 mb-3 p-3 border border-danger border-3 rounded text-center" style="background-color: #228B22;">
+                <a href="#tickets" style="color: white; text-decoration: none; font-weight: bold">Get tickets<br>see below ↓</a>
+
+            </div>
+            <em>All That's Left of You</em> is a 2025 drama written, directed, and produced by Cherien Dabis, who also stars in the film alongside Saleh Bakri, Mohammad Bakri, and Adam Bakri. It follows a Palestinian family across three generations, spanning from the 1948 Nakba to the 2020s under Israeli occupation. <!-- Wikipedia -->
+        </div>
+        <p>When a teenager in the Occupied West Bank is caught in a protest, his mother's memories of the 1948 Nakba resurface, intertwining past and present in a deeply personal reckoning with intergenerational trauma, loss, and endurance.<!-- Palm Springs International Film Festival -->
+        </p><p>
+            The film had its world premiere at the 2025 Sundance Film Festival and was selected as the Jordanian entry for Best International Feature Film at the 98th Academy Awards, making the December shortlist.
+            The critical acclaim has been extraordinary, with critics straining to convey the superb quality and monumental importance of this film.
+            It currently holds a 100% rating on Rotten Tomatoes from 61 critics, with the consensus describing it as "a moving chronicle of generational trauma and perseverance... a riveting drama that takes on the thematic breadth of an epic work."
+        </p>
+        <p>MV For Palestine and Expanding The Conversation are proud to present a screening of this exceptionally acclaimed
+            film.</p>
+        <h2 id="tickets">tickets</h2>
+        <p>Admission is a suggested donation of $20 per person. Larger donations are gratefully accepted and help make future screenings possible. No one will be turned away for inability to pay.</p>
+        <p>To reserve your seat, please send your donation via Venmo to <a href="https://account.venmo.com/u/mvforpalestine">@mvforpalestine</a> with "ATLOY" and your name(s) in the memo.</p>
+    </div>
+{% endblock %}

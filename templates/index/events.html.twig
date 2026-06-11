@@ -6,35 +6,20 @@
 
 
     <h2 class="text-center">actions and events</h2>
-            {% if  "now"|date("Y-m-d.H:i") < "2026-03-21.17:00" %}
-                <div class="p-4 border border-success border-4 alert shadow my-3 mb-5">
-                    <h3>Five&nbsp;Weeks&nbsp;in&nbsp;Palestine: A&nbsp;Personal&nbsp;Journey</h3>
-                    <h5>A talk by Edward Zlotkowski</h5>
-                    <h5>March 21, 1:00 pm</h5>
-                    <h5>Oak Bluffs Library</h5>
-                <p><em>We are please to present this public talk by Edward Zlotkowski,
-                        a long-time resident of West Tisbury. In his own words:</em></p>
-                    <div>
-                        <p>
-                        In March of last year, with the situation in Gaza growing more catastrophic every day, I decided I needed to do more than make calls to Congress and send donations to frontline organizations.  Although visiting Gaza itself did not seem feasible or prudent, visiting the West Bank did.  Six months later I was in Hebron/Al-Khalil, the only intact Palestinian city occupied by Israel (apart from East Jerusalem).  I was just a month shy of my 81st birthday.
-                        </p><p>
-                            In this talk I want to share not only what I found – and didn’t find – in Hebron but also how this trip has helped me redefine myself.  With few exceptions, most of the other international volunteers I met and worked with were in their late twenties.  Two or three were in their fifties.  No one else was over 60.  What could a man my age contribute to the lives of people living under occupation?  Did I have the physical stamina and mental resilience not to be a burden to those around me?
+            {% if  "now"|date("Y-m-d.H:i") < "2026-06-28.22:00" %}
+                <div class="border border-success border-4 alert shadow my-3">
+                    <span style="text-decoration: underline">film screening</span>
+                    <div class="text-center">
+                        <h2>All That's Left Of You</h2>
+                        <p>June 28, 2026 6:00pm<br>
+                            Strand Theater, Oak Bluffs
                         </p>
-                        <p>
-                        If you are interested in learning what I learned about living under occupation and how, even under such circumstances, one can still find the strength to make life meaningful, you may find my experience interesting.  It may even serve as an incentive to help you make affirmative changes in your own life.
-                    </p>
-                        <hr>
-                        Edward Zlotkowski is Professor Emeritus of English and Media Studies at Bentley University where he founded the Service-Learning and Civic Engagement Center in 1992.
-                        He has spoken at colleges and universities around the country and has written extensively on a wide range of civic engagement topics.
-                        In 2015 he received the Distinguished Lifetime Achievement Award from the International Association for Research on Service-Learning and Civic Engagement.
-                        Since retirement, he has helped develop early literacy programs and has worked as a literacy volunteer in Massachusetts public schools in the greater Boston area
-                        and on the island.  For six years, he was an active board member of The Puppet Showplace, New England’s largest puppet theater. More recently, he helped
-                        found RAWAN (<a href="https://www.rawanschool.org" target="_blank">www.rawanschool.org</a>), a women’s literacy center in Kabul, Afghanistan, and serves actively on its board.  He hopes to return to Palestine
-                        later this year to teach English and puppetry in the refugee camps and other settings.
-                        <hr>
-                        <em>This event is free and open to the public.</em>
                     </div>
+                    <p>We are pleased to present this outstanding new film to island audiences.
+                        Please see <a href="/ATLOY">ATLOY</a> for further information.</p>
                 </div>
+
+
             {% endif %}
             {% if  "now"|date("Y-m-d.H:i") < "2025-04-27.17:00" %}
 
@@ -58,7 +43,8 @@
     <p>MV For Palestine holds standouts in solidarity with the Palestinian cause at the Five Corners intersection in Vineyard Haven every Sunday, rain or shine. Come join us!
         Our next standout at Five Corners will be <strong>{{ standout.nextStandoutDate }}</strong>.</p>
     <img src="{{ asset('images/17-dec.5-corners.jpg') }}" alt="MV For Palestine members standing on the sidewalk holding signs demanding a ceasefire" class="img-fluid mb-3">
-    <p>We've been out there every Sunday since November 19, 2023. Anyone who shares our goals -- stop the genocide in Gaza, fight the big lie that equates criticism of Zionism with antisemitism --
+    <p>We've been out there every Sunday since November 19, 2023. Anyone who shares our goals -- stop Israeli aggression in Gaza, the West Bank, Lebanon; fight the big lie
+        that equates criticism of Zionism with antisemitism --
     is welcome to join us in this weekly demonstration. We stay for {{ standout.duration_informal }}, but you can arrive late or leave early if need be. If you
     don't bring a sign, you can borrow one from our supply. If you aren't comfortable standing, you can bring a chair or use one of ours. Public restrooms are available within easy
         walking distance at the Vineyard Haven ferry terminal. Whether you're a year-round resident, seasonal, or just on the island for a day trip -- join us!

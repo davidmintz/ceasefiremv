@@ -7,6 +7,21 @@
 
         <div class="p-2" style="max-width: 600px;">
             <h2 class="text-center pb-2">Welcome to MVForPalestine.org</h2>
+            {% if  "now"|date("Y-m-d.H:i") < "2026-06-28.22:00" %}
+                <div class="border border-success border-4 alert shadow my-3">
+                    <span style="text-decoration: underline">film screening</span>
+                    <div class="text-center">
+                        <h2>All That's Left Of You</h2>
+                        <p>June 28, 2026 6:00pm<br>
+                            Strand Theater, Oak Bluffs
+                        </p>
+                    </div>
+                    <p>We are pleased to present this outstanding new film to island audiences.
+                    Please see <a href="/events/ATLOY">events/ATLOY</a> for further information.</p>
+                </div>
+
+
+            {% endif %}
             <p><strong>MV For Palestine</strong>, also known as <strong>Ceasefire MV</strong>, is a group of people living
                 on Martha's Vineyard (Massachusetts, USA) who demand an immediate, permanent ceasefire and halt to the Israeli
                 state's genocidal war on Gaza.  We welcome all those who share our objectives: stop the genocide,
@@ -16,21 +31,7 @@
             <p>Our informal group came together in November, 2023, in response to the horrifying Israeli war of annihilation
                 against Gaza. You can <a title="learn more about MV For Palestine" href="/about">read more here about MV For Palestine</a>. For our
                 responses to various comments and questions we've been asked, see our <a href="/questions">questions and answers page.</a></p>
-            {% if  "now"|date("Y-m-d.H:i") < "2026-05-09.22:00" %}
-                <div class="border border-success border-4 alert shadow my-3">
-                    <div class="text-center">
-                <h2>Empty Bowls</h2>
-                    <h3>fundraiser</h3>
 
-                    <p>May 9, 2026 5:00pm - 9:30 pm<br>
-                        at the Grange Hall
-                    </p>
-                    </div>
-                    <p>A fundraiser with food and live music to benefit the <a href="https://www.mecaforpeace.org/" target="_blank">
-                            Middle East Children's Alliance.</a> Please see <a href="/files/fundraiser.pdf">this flyer</a> for further information.</p>
-
-                </div>
-            {% endif %}
         </div>
     </div>
 {% endblock %}

@@ -93,4 +93,10 @@ class IndexController extends AbstractController
             ]);
         }
     }
+    /** for All That's Left of You -- ATLOY -- in lowercase */
+    #[Route('/atloy', name: 'atloy_lowercase')]
+    public function atloy() : Response
+    {
+        return $this->redirectToRoute('template', ['template' => 'ATLOY'], 301);
+    }
 }

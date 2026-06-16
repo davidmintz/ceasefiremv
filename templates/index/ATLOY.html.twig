@@ -7,6 +7,38 @@
             <meta property="og:url" content="https://mvforpalestine.org/ATLOY"/>
         {%  endblock %}
 {% block title %}film screening: All That's Left of You | {{ parent() }}{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            console.log("wtf????")
+            const shareBtn = document.getElementById('share-btn');
+            if (navigator.share) {
+                shareBtn.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    console.log("wtf?")
+                    try {
+                        await navigator.share({
+                            title: 'All That\'s Left of You - screening June 28',
+                            url: 'https://mvforpalestine.org/ATLOY'
+                        });
+                    } catch(err) {
+                        // user cancelled or error, do nothing
+                        console.warn("error?");
+                    }
+                });
+            } else {
+                // shareBtn.href = 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmvforpalestine.org%2FATLOY';
+                // shareBtn.target = '_blank';
+                shareBtn.addEventListener('click', () => {
+                    window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmvforpalestine.org%2FATLOY', '_blank');
+                });
+                console.log("else?? hello.")
+
+            }
+        });
+    </script>
+{% endblock %}
 {% block body %}
     <div style="max-width: 800px; margin:auto; font-size:1.1em">
     <span style="text-decoration: underline">film screening</span>
@@ -39,5 +71,10 @@
             You can also send your donation via Venmo to
             <a href="https://venmo.com/mvforpalestine?txn=pay&note=ATLOY+screening" class="alert-link">@mvforpalestine</a>
             with "ATLOY" and your name(s) in the memo.
-        </div>    </div>
+        </div>
+        <hr>
+        <div class="text-center"></div><button class="btn btn-primary" id="share-btn">Share</button> this on social media  | <a
+                href="/files/all-thats-left-of-you.flyer.pdf">download our flyer</a>
+
+    </div>
 {% endblock %}

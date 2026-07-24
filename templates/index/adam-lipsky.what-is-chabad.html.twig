@@ -1,6 +1,11 @@
 {% extends 'wrapper.html.twig' %}
 {% block title %}What is Chabad? | {{ parent() }}{% endblock %}
-
+{% block og_meta %}
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="https://mvforpalestine.org/images/og_image.v2.0.png" />
+    <meta property="og:title" content="What Is Chabad? — An Open Letter to the MV Times and Vineyard Gazette" />
+    <meta property="og:description" content="A Letter to the Editor that our local newspapers declined to publish." />
+{%  endblock %}
 {% block content %}
     <h2 class="text-center">What is Chabad?</h2>
     <h5>Open Letter to the Martha's Vineyard Times and the Vineyard Gazette</h5>

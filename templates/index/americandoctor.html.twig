@@ -1,0 +1,87 @@
+{% extends 'wrapper.html.twig' %}
+        {% block og_meta %}
+            <meta property="og:type" content="website" />
+            <meta property="og:title" content="American Doctor - film screening presented by MV for Palestine/Expanding The Conversation" />
+            <meta property="og:image" content="https://mvforpalestine.org/images/three-surgeons.w-1200.jpeg" />
+            <meta property="og:description" content="MV for Palestine presents the new documentary American Doctor - August 25 6:00p at the Strand Theater, Oak Bluffs MA">
+            <meta property="og:url" content="https://mvforpalestine.org/americandoctor"/>
+        {%  endblock %}
+{% block title %}film screening: American Doctor | {{ parent() }}{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            //console.log("wtf????")
+            const shareBtn = document.getElementById('share-btn');
+            if (navigator.share) {
+                shareBtn.addEventListener('click', async (e) => {
+                    e.preventDefault();
+                    console.log("wtf?")
+                    try {
+                        await navigator.share({
+                            title: 'American Doctor - screening August 25',
+                            url: 'https://mvforpalestine.org/americandoctor'
+                        });
+                    } catch(err) {
+                        // user cancelled or error, do nothing
+                        console.warn("error?");
+                    }
+                });
+            } else {
+                // shareBtn.href = 'https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmvforpalestine.org%2FATLOY';
+                // shareBtn.target = '_blank';
+                shareBtn.addEventListener('click', () => {
+                    window.open('https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fmvforpalestine.org%2Famericandoctor', '_blank');
+                });
+                //console.log("else?? hello.")
+
+            }
+        });
+    </script>
+{% endblock %}
+{% block body %}
+    <div style="max-width: 800px; margin:auto; font-size:1.1em">
+    <span style="text-decoration: underline">film screening</span>
+        <h1 class="text-center">American Doctor</h1>
+        <h3 class="text-center">Tuesday August 25 6:00pm<br>
+        Strand Theater - Oak Bluffs</h3>
+        <img class="img-fluid mb-3"  src="/images/three-surgeons.jpeg" alt="a team of surgeons performing an operation">
+        <div class="mb-3">
+            <div class="float-end ms-3 mb-3 p-3 border border-danger border-3 rounded text-center" style="background-color: #228B22;">
+                <a href="#tickets" style="color: white; text-decoration: none; font-weight: bold">Get tickets<br>see below ↓</a>
+
+            </div>
+            <p>
+            From Oscar®-nominated and Emmy® Award-winning filmmaker Poh Si Teng,
+            AMERICAN DOCTOR follows three American physicians— Palestinian, Jewish, and
+            Zoroastrian—united by a single oath to save lives. After volunteering in besieged
+            hospitals in Gaza, they return home determined to fight for the patients and
+            colleagues they left behind, taking their battle from the front lines of war to the
+            halls of Congress.
+            </p>
+            <p>MV For Palestine is pleased to present this extraordinarily powerful documentary that
+            only recently premièred in New York City. Watch the trailer at <a
+                        href="https://americandoctorfilm.com/trailer" target="_blank" >americandoctorfilm.com/trailer</a>
+            </p>
+
+        </div>
+
+        <h2 class="text-center" id="tickets">tickets</h2>
+        <p>Admission is a suggested donation of $20 per person. Larger donations are gratefully accepted;
+            no one will be turned away for inability to pay.</p>
+        <div class="alert alert-success" role="alert" style="font-weight: 500">
+            To reserve your seat, send your donation via Venmo to
+            <a href="https://venmo.com/mvforpalestine?txn=pay&note=American+doctor+screening" class="alert-link">@mvforpalestine</a>
+            with your name(s) in the memo.
+            Or you can also make a donation through
+            <a href="https://www.olivebranchfairtrade.org/fair-trade-products/product/donation-etc-atloy-GR6WPAIOZHZLM5RRTQIWQU2K" class="alert-link">Olive Branch Fair Trade</a>.
+            <br><br>
+
+
+        </div>
+
+        <div class="text-center"><button class="btn btn-primary" id="share-btn">Share</button> this on social media  | <a
+                href="/files/americandoctor.flyer.v1.pdf">download our flyer</a></div>
+        <hr>
+    </div>
+{% endblock %}

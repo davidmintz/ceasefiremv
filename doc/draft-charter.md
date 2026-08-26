@@ -12,7 +12,7 @@ The organization is a political and educational group that supports the cause of
 
 ## 3. Membership
 
-There are no membership dues. Any person who attends a meeting of the organization is deemed a member from that point forward. Membership carries no further obligation.
+There are no membership dues. Any person who attends a meeting of the organization and agrees with its core principles, as set out in Section 2 (Purpose), is deemed a member from that point forward. Membership carries no further obligation.
 
 ## 4. Meetings
 

@@ -97,7 +97,7 @@ class IndexController extends AbstractController
             navigation links in the menu above.";
             return $this->render('index/template.html.twig', [
                 'template' => $template, 'status' => $status
-            ]);
+            ], new Response('', Response::HTTP_NOT_FOUND));
         }
     }
 }

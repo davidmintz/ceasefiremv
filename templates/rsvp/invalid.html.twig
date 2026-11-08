@@ -1,0 +1,10 @@
+{% extends 'wrapper.html.twig' %}
+{% block title %}Link not valid | {{ parent() }}{% endblock %}
+{% block content %}
+    <h2 class="text-center my-4">This link isn't valid</h2>
+    <p>
+        The confirmation link has expired, has already been used, or was replaced by a newer one.
+        If you've already confirmed, you're all set. Otherwise, <a href="{{ path('rsvp') }}">fill out the RSVP form again</a>
+        to get a new link.
+    </p>
+{% endblock %}

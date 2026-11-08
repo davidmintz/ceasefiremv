@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><title>Confirm your RSVP</title></head>
+<body style="margin:0; padding:0; background:#f4f4f4;">
+<table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background:#f4f4f4;">
+    <tr><td align="center" style="padding:24px 12px;">
+        <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="max-width:560px; background:#ffffff; border-radius:6px; font-family:Arial, Helvetica, sans-serif; font-size:16px; line-height:1.5; color:#222222;">
+            <tr><td style="padding:28px 28px 8px;">
+                <p style="margin:0 0 16px;">Hi {{ rsvp.name }},</p>
+                <p style="margin:0 0 8px;">Thanks for your RSVP for:</p>
+                <p style="margin:0 0 16px; padding-left:16px;"><strong>{{ meeting.title }}</strong><br>{{ meeting.when }}</p>
+                <p style="margin:0 0 24px;">You told us you plan to attend <strong>{{ rsvp.mode.label }}</strong>.</p>
+            </td></tr>
+            <tr><td align="center" style="padding:0 28px 24px;">
+                <a href="{{ url }}" style="display:inline-block; background:#0d6efd; color:#ffffff; text-decoration:none; font-weight:bold; padding:12px 28px; border-radius:6px;">Confirm my RSVP</a>
+            </td></tr>
+            <tr><td style="padding:0 28px 28px;">
+                <p style="margin:0 0 16px; font-size:14px; color:#555555;">
+                    The button opens a page where you click <strong>Confirm</strong>. If it doesn't work, copy this link into your browser:<br>
+                    <a href="{{ url }}" style="color:#0d6efd; word-break:break-all;">{{ url }}</a>
+                </p>
+                <p style="margin:0 0 16px; font-size:14px; color:#555555;">If you didn't request this, ignore this email and nothing will happen.</p>
+                <p style="margin:0;">MV For Palestine<br><a href="https://mvforpalestine.org" style="color:#0d6efd;">mvforpalestine.org</a></p>
+            </td></tr>
+        </table>
+    </td></tr>
+</table>
+</body>
+</html>

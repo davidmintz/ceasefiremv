@@ -1,0 +1,6 @@
+{% extends 'wrapper.html.twig' %}
+{% block title %}RSVP closed | {{ parent() }}{% endblock %}
+{% block content %}
+    <h2 class="text-center my-4">RSVPs are closed</h2>
+    <p class="text-center">RSVPs for {{ meeting.when }} are no longer being accepted.</p>
+{% endblock %}

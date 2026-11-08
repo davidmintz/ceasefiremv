@@ -1,0 +1,13 @@
+{% extends 'wrapper.html.twig' %}
+{% block title %}Check your email | {{ parent() }}{% endblock %}
+{% block content %}
+    <h2 class="text-center my-4">Almost done: check your email</h2>
+    <p>
+        We've sent a confirmation link to the address you entered. Open it and click <strong>Confirm</strong>
+        to complete your RSVP for {{ meeting.when }}.
+    </p>
+    <p>
+        If it doesn't arrive within a few minutes, check your spam folder, or
+        <a href="{{ path('rsvp') }}">submit the form again</a> to get a new link.
+    </p>
+{% endblock %}

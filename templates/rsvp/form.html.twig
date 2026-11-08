@@ -1,0 +1,25 @@
+{% extends 'wrapper.html.twig' %}
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{% block title %}RSVP | {{ parent() }}{% endblock %}
+{% block content %}
+    <style>.rsvp-hp { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }</style>
+    <h2 class="text-center my-4">RSVP</h2>
+    <p class="lead text-center">{{ meeting.title }}<br><strong>{{ meeting.when }}</strong></p>
+    <p>
+        Let us know whether you plan to come in person or join via Zoom. We'll email you a link to confirm
+        your RSVP. Zoom participants will get the meeting link by email a day or two beforehand.
+    </p>
+    {% for message in app.flashes('danger') %}
+        <div class="alert alert-danger">{{ message }}</div>
+    {% endfor %}
+    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+        {{ form_row(form.mode) }}
+        {{ form_row(form.name) }}
+        {{ form_row(form.email) }}
+        {{ form_row(form.website) }}
+        {{ form_row(form.submit) }}
+    {{ form_end(form) }}
+    <p class="small text-muted mt-4">
+        We use your email address only for this meeting. See our <a href="{{ path('template', {template: 'privacy'}) }}">privacy policy</a>.
+    </p>
+{% endblock %}

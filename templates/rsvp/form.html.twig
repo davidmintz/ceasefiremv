@@ -6,13 +6,15 @@
     <h2 class="text-center my-4">RSVP</h2>
     <p class="lead text-center">{{ meeting.title }}<br><strong>{{ meeting.when }}</strong></p>
     <p>
-        Let us know whether you plan to come in person or join via Zoom. We'll email you a link to confirm
-        your RSVP. Zoom participants will get the meeting link by email a day or two beforehand.
+        MVforPalestine will hold a meeting at the Olive Branch to vote on adoption of a
+        <a target="_blank" href="https://mvforpalestine.org/files/latest-draft.charter-and-principles.pdf">charter</a> and to elect a
+        steering committee. Please let us know whether you plan to come in person or join via Zoom. We'll email
+        you a link to confirm your RSVP. Zoom participants will get the meeting link a few hours beforehand.
     </p>
     {% for message in app.flashes('danger') %}
         <div class="alert alert-danger">{{ message }}</div>
     {% endfor %}
-    {{ form_start(form, {attr: {novalidate: 'novalidate'}}) }}
+    {{ form_start(form, {attr: {novalidate: 'novalidate', style: 'max-width: 32rem'}}) }}
         {{ form_row(form.mode) }}
         {{ form_row(form.name) }}
         {{ form_row(form.email) }}

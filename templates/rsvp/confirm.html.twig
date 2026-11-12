@@ -12,7 +12,7 @@
         <input type="hidden" name="_token" value="{{ csrf_token('rsvp_confirm') }}">
         <button type="submit" class="btn btn-primary btn-lg">Confirm</button>
     </form>
-    <p class="small text-muted mt-4 text-center">
+    <p class="small text-muted mt-4">
         Something wrong? <a href="{{ path('rsvp') }}">Fill out the form again</a> with the same email address.
     </p>
 {% endblock %}

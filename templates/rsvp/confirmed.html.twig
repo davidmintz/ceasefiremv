@@ -2,10 +2,10 @@
 {% block title %}RSVP confirmed | {{ parent() }}{% endblock %}
 {% block content %}
     <h2 class="text-center my-4">Thank you, {{ rsvp.name }}!</h2>
-    <p class="text-center">
+    <p>
         Your RSVP is confirmed: you plan to attend <strong>{{ rsvp.mode.label }}</strong> on {{ meeting.when }}.
     </p>
     {% if rsvp.mode.value == 'zoom' %}
-        <p class="text-center">We'll email you the Zoom link a day or two before the meeting.</p>
+        <p>We'll email you the Zoom link a day or two before the meeting.</p>
     {% endif %}
 {% endblock %}

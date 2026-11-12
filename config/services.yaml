@@ -19,7 +19,7 @@ parameters:
         title: 'General Meeting'
         when: 'Tuesday, November 17, 2026, 5:30 pm'
         deadline: '2026-11-17 12:00 America/New_York' # form closes; links expire
-        from: 'david@davidmintz.org'                # must be a sender Fastmail is allowed to send as
+        from: 'david@mvforpalestine.org'   # must be a sender Fastmail is allowed to send as
 
 
 services:

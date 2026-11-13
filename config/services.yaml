@@ -15,10 +15,10 @@ parameters:
 
     # RSVP for the charter vote / exec committee election meeting
     app.rsvp:
-        meeting: '2026-11-17'                       # key stored on each Rsvp row
+        meeting: '2026-11-19'                       # key stored on each Rsvp row
         title: 'General Meeting'
-        when: 'Tuesday, November 17, 2026, 5:30 pm'
-        deadline: '2026-11-17 12:00 America/New_York' # form closes; links expire
+        when: 'Thursday, November 19, 2026, 5:30 pm'
+        deadline: '2026-11-19 12:00 America/New_York' # form closes; links expire
         from: 'david@mvforpalestine.org'   # must be a sender Fastmail is allowed to send as
 
 

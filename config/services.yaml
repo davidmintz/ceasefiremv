@@ -7,9 +7,9 @@
 parameters:
     # weekly standout in VH
     app.standout: {
-        start_time: "11:30",
-        duration: { hours: 1, minutes: 30 },
-        duration_informal: "an hour and a half",
+        start_time: "12:00",
+        duration: { hours: 1, minutes: 0 },
+        duration_informal: "an hour",
         day_of_week : "Sunday"
     }
 

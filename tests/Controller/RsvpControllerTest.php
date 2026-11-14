@@ -67,12 +67,8 @@ class RsvpControllerTest extends WebTestCase
         $this->assertSame(AttendanceMode::Zoom, $rsvps[0]->getMode());
         $this->assertFalse($rsvps[0]->isVerified());
 
-        // GET only shows the button; it must not verify (mail scanners follow links)
-        $crawler = $this->client->request('GET', $this->confirmUrlFromLastEmail());
-        $this->assertResponseIsSuccessful();
-        $this->assertFalse($this->findRsvps()[0]->isVerified());
-
-        $this->client->submit($crawler->selectButton('Confirm')->form());
+        // opening the link confirms
+        $this->client->request('GET', $this->confirmUrlFromLastEmail());
         $this->assertResponseIsSuccessful();
         $this->assertSelectorTextContains('h2', 'Thank you, Jane Doe');
         $this->assertTrue($this->findRsvps()[0]->isVerified());
@@ -95,15 +91,17 @@ class RsvpControllerTest extends WebTestCase
         $this->assertResponseStatusCodeSame(404);
     }
 
-    public function testUsedLinkCannotBeReused(): void
+    public function testReopeningLinkShowsConfirmedAgain(): void
     {
         $this->submit('Jane Doe', 'jane@example.org');
         $url = $this->confirmUrlFromLastEmail();
-        $crawler = $this->client->request('GET', $url);
-        $this->client->submit($crawler->selectButton('Confirm')->form());
+        $this->client->request('GET', $url); // e.g. a mail scanner
+        $verifiedAt = $this->findRsvps()[0]->getVerifiedAt();
 
-        $this->client->request('GET', $url);
-        $this->assertResponseStatusCodeSame(404);
+        $this->client->request('GET', $url); // then the person
+        $this->assertResponseIsSuccessful();
+        $this->assertSelectorTextContains('h2', 'Thank you, Jane Doe');
+        $this->assertEquals($verifiedAt, $this->findRsvps()[0]->getVerifiedAt());
     }
 
     public function testHoneypotStoresNothingAndSendsNothing(): void

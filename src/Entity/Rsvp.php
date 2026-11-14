@@ -84,11 +84,14 @@ class Rsvp
         return null === $this->tokenExpiresAt || ($now ?? new \DateTimeImmutable()) > $this->tokenExpiresAt;
     }
 
+    /**
+     * The token is kept (until it expires or a resubmit replaces it) so that
+     * opening the link again, e.g. after a mail scanner already did, still
+     * lands on the "confirmed" page instead of "link not valid".
+     */
     public function verify(): void
     {
         $this->verifiedAt ??= new \DateTimeImmutable();
-        $this->tokenHash = null;
-        $this->tokenExpiresAt = null;
         $this->updatedAt = new \DateTimeImmutable();
     }
 

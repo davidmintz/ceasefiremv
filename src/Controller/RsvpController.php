@@ -81,11 +81,13 @@ class RsvpController extends AbstractController
     }
 
     /**
-     * GET shows a Confirm button; only the POST marks the RSVP verified, so
-     * link-scanning mail filters can't confirm on the recipient's behalf.
+     * Opening the link confirms the RSVP. (Mail scanners that prefetch links
+     * may confirm on the recipient's behalf; for a headcount that's acceptable,
+     * and it beats people stopping at a "press Confirm" page.) POST is still
+     * accepted for confirm pages rendered before this change.
      */
     #[Route('/confirm/{token}', name: 'rsvp_confirm', requirements: ['token' => '[A-Za-z0-9_-]{43}'], methods: ['GET', 'POST'])]
-    public function confirm(Request $request, string $token): Response
+    public function confirm(string $token): Response
     {
         $meeting = $this->meeting();
         $rsvp = $this->repo->findOneByRawToken($token);
@@ -94,17 +96,12 @@ class RsvpController extends AbstractController
             return $this->render('rsvp/invalid.html.twig', ['meeting' => $meeting], new Response('', Response::HTTP_NOT_FOUND));
         }
 
-        if ($request->isMethod('POST')) {
-            if (!$this->isCsrfTokenValid('rsvp_confirm', (string) $request->request->get('_token'))) {
-                throw $this->createAccessDeniedException('Invalid CSRF token');
-            }
+        if (!$rsvp->isVerified()) {
             $rsvp->verify();
             $this->em->flush();
-
-            return $this->render('rsvp/confirmed.html.twig', ['meeting' => $meeting, 'rsvp' => $rsvp]);
         }
 
-        return $this->render('rsvp/confirm.html.twig', ['meeting' => $meeting, 'rsvp' => $rsvp, 'token' => $token]);
+        return $this->render('rsvp/confirmed.html.twig', ['meeting' => $meeting, 'rsvp' => $rsvp]);
     }
 
     private function sendConfirmation(MailerInterface $mailer, Rsvp $rsvp, string $token): void

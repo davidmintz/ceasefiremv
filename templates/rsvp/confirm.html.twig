@@ -1,18 +1,24 @@
 {% extends 'wrapper.html.twig' %}
 {% block title %}Confirm your RSVP | {{ parent() }}{% endblock %}
 {% block content %}
-    <h2 class="text-center my-4">Confirm your RSVP</h2>
-    <p class="lead text-center">{{ meeting.title }}<br><strong>{{ meeting.when }}</strong></p>
-    <dl class="row">
-        <dt class="col-sm-3">Name</dt><dd class="col-sm-9">{{ rsvp.name }}</dd>
-        <dt class="col-sm-3">Email</dt><dd class="col-sm-9">{{ rsvp.email }}</dd>
-        <dt class="col-sm-3">Attending</dt><dd class="col-sm-9">{{ rsvp.mode.label }}</dd>
-    </dl>
-    <form method="post" action="{{ path('rsvp_confirm', {token: token}) }}" class="text-center">
-        <input type="hidden" name="_token" value="{{ csrf_token('rsvp_confirm') }}">
-        <button type="submit" class="btn btn-primary btn-lg">Confirm</button>
-    </form>
-    <p class="small text-muted mt-4">
-        Something wrong? <a href="{{ path('rsvp') }}">Fill out the form again</a> with the same email address.
-    </p>
+    <div class="mx-auto" style="max-width: 32rem;">
+        <h2 class="my-4">One more step</h2>
+        <div class="alert alert-warning" role="alert">
+            <strong>Your RSVP is not confirmed yet.</strong>
+            Press the <strong>Confirm my RSVP</strong> button below to finish.
+        </div>
+        <form method="post" action="{{ path('rsvp_confirm', {token: token}) }}" class="mb-4">
+            <input type="hidden" name="_token" value="{{ csrf_token('rsvp_confirm') }}">
+            <button type="submit" class="btn btn-primary btn-lg w-100 py-3">Confirm my RSVP</button>
+        </form>
+        <p class="mb-2">{{ meeting.title }}<br><strong>{{ meeting.when }}</strong></p>
+        <dl class="row">
+            <dt class="col-4">Name</dt><dd class="col-8">{{ rsvp.name }}</dd>
+            <dt class="col-4">Email</dt><dd class="col-8 text-break">{{ rsvp.email }}</dd>
+            <dt class="col-4">Attending</dt><dd class="col-8">{{ rsvp.mode.label }}</dd>
+        </dl>
+        <p class="small text-muted mt-4">
+            Something wrong? <a href="{{ path('rsvp') }}">Fill out the form again</a> with the same email address.
+        </p>
+    </div>
 {% endblock %}
